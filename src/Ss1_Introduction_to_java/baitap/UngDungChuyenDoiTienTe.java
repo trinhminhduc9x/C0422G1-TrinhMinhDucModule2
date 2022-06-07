@@ -7,9 +7,9 @@ public class UngDungChuyenDoiTienTe {
         double vnd = 23000;
         double usd ;
         Scanner sc = new Scanner(System.in);
-        System.out.println("moi ban nhap vao so tien");
+        System.out.println("moi ban nhap vao so tien usd");
         usd = sc.nextDouble();
-        double quydoi = usd*23000;
-        System.out.println(" gia tri VND : "+ quydoi );
+        double quyDoi = usd*vnd;
+        System.out.println(" gia tri VND : "+ quyDoi );
     }
 }
