@@ -1,4 +1,4 @@
-package Ss1_Introductiontojava.baitap;
+package Ss1_Introduction_to_java.baitap;
 
 public class Khaibaovasudungbien {
     public static void main(String[] args) {
