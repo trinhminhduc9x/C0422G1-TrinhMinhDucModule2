@@ -1,8 +1,6 @@
 package Ss2_vong_lap_trong_java.baitap;
 
-import java.util.Scanner;
-
-public class SoNguyenTo {
+public class Prime2 {
     public static boolean kiemTraSnt(int n) {
         if (n < 2) {
             return false;
@@ -15,13 +13,10 @@ public class SoNguyenTo {
         return true;
     }
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhập n = ");
-        int n = scanner.nextInt();
-        System.out.println(n + " so nguyên tố đầu tiên là : ");
+        System.out.println(100 + " so nguyên tố đầu tiên là : ");
         int dem = 0;
         int i = 2;
-        while (dem < n) {
+        while (dem < 100) {
             if (kiemTraSnt(i)) {
                 System.out.print(i + " ");
                 dem++;

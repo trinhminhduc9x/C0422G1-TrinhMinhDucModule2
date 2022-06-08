@@ -2,7 +2,7 @@ package Ss2_vong_lap_trong_java.baitap;
 
 import java.util.Scanner;
 
-public class HienThiHinh {
+public class DisplayImg {
     public static void main(String[] args) {
         int choice = -1;
         Scanner input = new Scanner(System.in);
