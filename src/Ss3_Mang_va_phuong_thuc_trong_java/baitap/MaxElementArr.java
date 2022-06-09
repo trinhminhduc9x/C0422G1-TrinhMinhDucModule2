@@ -4,7 +4,7 @@ import My_Method.Array;
 
 import java.util.Arrays;
 
-public class bai4 {
+public class MaxElementArr {
     public static void main(String[] args) {
         int[] arr1 = Array.intToArr();
         int[] arr2 = Array.intToArr();

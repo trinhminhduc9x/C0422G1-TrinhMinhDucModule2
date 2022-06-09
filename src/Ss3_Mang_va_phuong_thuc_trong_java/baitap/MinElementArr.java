@@ -5,7 +5,6 @@ import My_Method.Array;
 import java.util.Arrays;
 
 public class MinElementArr {
-    public static void main(String[] args) {
         public static void main(String[] args) {
             int[] arr1 = Array.intToArr();
             int[] arr2 = Array.intToArr();
@@ -28,5 +27,4 @@ public class MinElementArr {
             }
             System.out.println("max la : "+ min);
         }
-    }
 }
