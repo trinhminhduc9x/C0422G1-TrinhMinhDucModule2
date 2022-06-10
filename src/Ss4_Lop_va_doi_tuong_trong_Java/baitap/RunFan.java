@@ -1,7 +1,6 @@
-package Ss4_Lop_va_doi_tuong_trong_Java.baitap.fan;
+package Ss4_Lop_va_doi_tuong_trong_Java.baitap;
 
-import Ss4_Lop_va_doi_tuong_trong_Java.baitap.Fan;
-public class run {
+public class RunFan {
     public static void main(String[] args) {
         Fan fan1 = new Fan();
         fan1.setColor("Yellow");
