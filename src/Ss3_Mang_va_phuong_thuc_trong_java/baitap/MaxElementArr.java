@@ -25,6 +25,6 @@ public class MaxElementArr {
             }
 
         }
-        System.out.println("max la : "+ max);
+        System.out.println("max is : "+ max);
     }
 }

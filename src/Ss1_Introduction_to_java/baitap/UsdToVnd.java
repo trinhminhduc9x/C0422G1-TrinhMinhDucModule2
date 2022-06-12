@@ -6,9 +6,9 @@ public class UsdToVnd {
     public static void main(String[] args) {
         final int RATE = 23000;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("moi ban nhap vao so tien usd");
+        System.out.println("enter usd ");
         int usd = Integer.parseInt(scanner.nextLine());
        int vnd = usd*RATE;
-        System.out.println(" gia tri VND : "+ vnd );
+        System.out.println("  VND : "+ vnd );
     }
 }

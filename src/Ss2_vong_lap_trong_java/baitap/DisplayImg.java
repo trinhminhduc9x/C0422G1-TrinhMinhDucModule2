@@ -16,10 +16,10 @@ public class DisplayImg {
             choice = input.nextInt();
             switch (choice) {
                 case 1:
-                    System.out.println("Nhập vào chiều dài ");
+                    System.out.println("enter length");
                     int chieuDai = input.nextInt();
 
-                    System.out.println("Nhập vào chiều rộng ");
+                    System.out.println("enter width ");
                     int chieuRong = input.nextInt();
 
                     System.out.println("Draw the rectangle");

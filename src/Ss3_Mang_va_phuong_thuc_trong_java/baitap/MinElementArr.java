@@ -25,6 +25,6 @@ public class MinElementArr {
                 }
 
             }
-            System.out.println("max la : "+ min);
+            System.out.println("min is : "+ min);
         }
 }

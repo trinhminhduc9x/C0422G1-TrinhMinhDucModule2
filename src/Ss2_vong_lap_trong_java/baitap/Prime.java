@@ -16,9 +16,9 @@ public class Prime {
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhập n = ");
+        System.out.print("enter prime = ");
         int n = scanner.nextInt();
-        System.out.println(n + " so nguyên tố đầu tiên là : ");
+        System.out.println(n + " prime is : ");
         int dem = 0;
         int i = 2;
         while (dem < n) {
