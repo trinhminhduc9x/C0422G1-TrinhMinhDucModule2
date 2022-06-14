@@ -48,6 +48,7 @@ public class Fan {
         if (this.isOn()) {
             return "Fan is on, speed " + this.getSpeed() + ", color:" + this.getColor() + ", Radius " + this.getRadius();
         } else {
+
             return "Fan is off, color:" + this.getColor() + ", Radius " + this.getRadius();
         }
     }
