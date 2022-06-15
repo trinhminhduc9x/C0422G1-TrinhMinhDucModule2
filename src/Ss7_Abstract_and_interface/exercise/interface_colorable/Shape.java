@@ -1,8 +1,8 @@
-package Ss6_Inheritance.practice.systemofgeometric;
+package Ss7_Abstract_and_interface.exercise.interface_colorable;
 
-import Ss7_Abstract_and_interface.exercise.interfac_resizeable.Resizeable;
 
-public  class Shape  {
+
+public abstract class Shape implements Colorable {
     private String color = " green";
     private boolean filled = true;
 
@@ -36,5 +36,10 @@ public  class Shape  {
                 + getColor()
                 + " and "
                 + (isFilled()?"fillesd":"not filled");
+    }
+
+    @Override
+    public void howToColor() {
+
     }
 }

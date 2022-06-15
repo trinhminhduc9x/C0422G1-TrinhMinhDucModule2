@@ -1,8 +1,8 @@
-package Ss6_Inheritance.practice.systemofgeometric;
+package Ss7_Abstract_and_interface.exercise.interfac_resizeable;
 
-import Ss7_Abstract_and_interface.exercise.interfac_resizeable.Resizeable;
+import java.util.Comparator;
 
-public  class Shape  {
+public abstract class Shape implements Resizeable, Comparable<Square> {
     private String color = " green";
     private boolean filled = true;
 
@@ -37,4 +37,14 @@ public  class Shape  {
                 + " and "
                 + (isFilled()?"fillesd":"not filled");
     }
+
+    @Override
+    public void resizeable(double percent) {
+        System.out.println("tang ti le " + percent);
+    }
+    @Override
+    public int compareTo(Square o) {
+        return 0;
+    }
+
 }

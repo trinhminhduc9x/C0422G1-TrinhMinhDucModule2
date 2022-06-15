@@ -54,14 +54,14 @@ public class MovablePoint extends Point {
                 '}';
     }
 
-//    public MovablePoint move() {
+    //    public MovablePoint move() {
 //        x += xSpeed;
 //        y += ySpeed;
 //        return this;
 //    }
-public MovablePoint move() {
-   super.setX(super.getX()+xSpeed);
-   super.setY(super.getY()+ySpeed);
-    return this;
-}
+    public MovablePoint move() {
+        super.setX(super.getX() + xSpeed);
+        super.setY(super.getY() + ySpeed);
+        return this;
+    }
 }
