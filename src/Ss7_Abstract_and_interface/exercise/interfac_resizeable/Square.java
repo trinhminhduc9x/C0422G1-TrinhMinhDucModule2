@@ -22,11 +22,21 @@ public class Square extends Shape {
     public void setSide(double side) {
         this.side = side;
     }
+    public double getArea() {
+        return side *side;
+    }
+
+    @Override
+    public void resizeable(double percent) {
+       setSide(getSide()*percent/100);
+    }
 
     @Override
     public String toString() {
         return "A Rectangle with side="
                 + getSide()
+                +"A Circle with area="
+                + getArea()
                 + " , which is a subclass of "
                 + super.toString();
     }

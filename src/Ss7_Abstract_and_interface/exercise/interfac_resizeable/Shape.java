@@ -37,7 +37,6 @@ public abstract class Shape implements Resizeable, Comparable<Square> {
                 + " and "
                 + (isFilled()?"fillesd":"not filled");
     }
-
     @Override
     public void resizeable(double percent) {
         System.out.println("tang ti le " + percent);

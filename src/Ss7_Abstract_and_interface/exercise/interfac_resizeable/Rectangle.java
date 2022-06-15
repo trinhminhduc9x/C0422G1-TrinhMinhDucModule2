@@ -43,11 +43,18 @@ public class Rectangle extends Shape {
     }
 
     @Override
+    public void resizeable(double percent) {
+        setLength(getLength()*percent/100);
+    }
+
+    @Override
     public String toString() {
         return "A Rectangle with width="
                 + getWidth()
                 + " and length="
                 + getLength()
+                +"A Circle with area="
+                + getAre()
                 + ", which is a subclass of "
                 + super.toString();
     }

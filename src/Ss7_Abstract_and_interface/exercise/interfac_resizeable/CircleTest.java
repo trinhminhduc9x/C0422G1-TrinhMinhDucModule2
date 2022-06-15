@@ -14,6 +14,21 @@ class CircleTest {
         shapes[2] = new Square("nn",true,10);
         for (Shape shape: shapes) {
             System.out.println(shape);
+            System.out.println("----------------------------");
+        }
+        for (Shape shape: shapes) {
+            if (shape instanceof Circle){
+                ((Circle) shape).resizeable(Math.random()*100);
+            } else if (shape instanceof Rectangle){
+                ((Rectangle) shape).resizeable(Math.random()*100);
+            } else {
+                ((Square) shape).resizeable(Math.random()*100);
+            }
+        }
+        System.out.println("-----------------------------");
+        for (Shape shape : shapes){
+            System.out.println(shape);
+            System.out.println("-----------------------");;
         }
     }
 

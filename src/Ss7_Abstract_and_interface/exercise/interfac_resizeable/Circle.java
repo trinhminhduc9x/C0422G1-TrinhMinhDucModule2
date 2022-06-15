@@ -35,8 +35,15 @@ public class Circle extends Shape implements Comparator<Circle> {
     public String toString() {
         return "A Circle with radius="
                 + getRadius()
+                +"A Circle with area="
+                + getArea()
                 + " , which is a subclass of "
                 + super.toString();
+    }
+
+    @Override
+    public void resizeable(double percent) {
+       setRadius(getRadius()*percent/100);
     }
 
     @Override
