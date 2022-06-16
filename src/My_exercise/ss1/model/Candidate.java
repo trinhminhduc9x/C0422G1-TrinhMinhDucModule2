@@ -83,8 +83,9 @@ public  class Candidate implements Comparable<Candidate> {
                 ", Sum= " + getSum() +
                 '}';
     }
+
     @Override
     public int compareTo(Candidate o) {
-        getSum()-o.getSum();
+        return 0;
     }
 }

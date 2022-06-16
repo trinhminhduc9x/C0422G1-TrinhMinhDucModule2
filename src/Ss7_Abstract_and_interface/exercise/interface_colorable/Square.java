@@ -1,12 +1,11 @@
 package Ss7_Abstract_and_interface.exercise.interface_colorable;
 
-import Ss7_Abstract_and_interface.exercise.interfac_resizeable.Shape;
-
 public class Square extends Shape {
     public double side = 1.0;
 
     public Square() {
     }
+
 
     public Square(double side) {
         this.side = side;
@@ -23,6 +22,11 @@ public class Square extends Shape {
 
     public void setSide(double side) {
         this.side = side;
+    }
+
+    @Override
+    public void howToColor() {
+        System.out.println(getColor());
     }
 
     @Override

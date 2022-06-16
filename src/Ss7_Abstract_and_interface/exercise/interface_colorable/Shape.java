@@ -40,6 +40,6 @@ public abstract class Shape implements Colorable {
 
     @Override
     public void howToColor() {
-
+        System.out.println(getColor());
     }
 }
