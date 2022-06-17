@@ -32,7 +32,11 @@ public class MainCandidate {
         Arrays.sort(candidates);
         System.out.println(" ket qua -------------------------------");
         for (Candidate candidate : candidates){
-            System.out.println(candidate);
+            System.out.println("la "+candidate);
+            if (candidate.getSum()>15){
+                System.out.println("la "+candidate);
+            }
+
         }
     }
 }

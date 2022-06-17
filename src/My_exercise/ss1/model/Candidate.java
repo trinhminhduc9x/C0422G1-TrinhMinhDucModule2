@@ -1,6 +1,6 @@
 package My_exercise.ss1.model;
 
-public  class Candidate implements Comparable<Candidate> {
+public class Candidate implements Comparable<Candidate> {
     private int Serial;
     private String Name;
     private String DateOfBirth;
@@ -68,9 +68,11 @@ public  class Candidate implements Comparable<Candidate> {
     public void setEnglishScores(double englishScores) {
         EnglishScores = englishScores;
     }
-    public double getSum(){
-        return  LiteratureScores + MathScores + EnglishScores ;
+
+    public double getSum() {
+        return LiteratureScores + MathScores + EnglishScores;
     }
+
     @Override
     public String toString() {
         return "Candidate{" +
@@ -86,6 +88,6 @@ public  class Candidate implements Comparable<Candidate> {
 
     @Override
     public int compareTo(Candidate o) {
-        return 0;
+        return o.getName().compareTo(this.getName());
     }
 }
