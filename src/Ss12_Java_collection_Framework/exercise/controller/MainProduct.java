@@ -1,5 +1,6 @@
 package Ss12_Java_collection_Framework.exercise.controller;
 
+import Ss12_Java_collection_Framework.exercise.model.Product;
 import Ss12_Java_collection_Framework.exercise.service.impl.ProductService;
 import demo.service.impl.StudentService;
 
@@ -33,6 +34,7 @@ public class MainProduct {
                     break;
                 case 3:
                     System.out.println("Chức năng xoá sản phẩm theo id");
+
                     productService.delete();
                     break;
                 case 4:

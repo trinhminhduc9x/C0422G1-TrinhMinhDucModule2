@@ -1,5 +1,7 @@
 package Ss12_Java_collection_Framework.exercise.model;
 
+import java.util.Objects;
+
 public class Product {
     private int Id;
     private String Name;
@@ -7,6 +9,11 @@ public class Product {
 
     public Product() {
     }
+
+    public Product(int id) {
+        Id = id;
+    }
+
     public Product(int id, String name, int cost) {
         Id = id;
         Name = name;
@@ -35,6 +42,19 @@ public class Product {
 
     public void setCost(int cost) {
         Cost = cost;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Id == product.Id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Id);
     }
 
     @Override

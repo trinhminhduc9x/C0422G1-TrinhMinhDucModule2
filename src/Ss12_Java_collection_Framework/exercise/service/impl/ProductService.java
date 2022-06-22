@@ -17,7 +17,6 @@ public class ProductService implements IService {
         productArrayList.add(new Product(3, "b", 4000));
         productArrayList.add(new Product(8, "c", 1000));
         productArrayList.add(new Product(2, "e", 3000));
-
     }
 
     @Override
@@ -26,6 +25,7 @@ public class ProductService implements IService {
             System.out.println(s);
         }
     }
+
     @Override
     public void add() {
         System.out.println("nhập id san pham");
@@ -62,6 +62,8 @@ public class ProductService implements IService {
     @Override
     public void delete() {
         dispaly();
+        int id = Integer.parseInt(scanner.nextLine());
+        Product product = new Product(id);
         System.out.println(" nhap san pham can xoa");
         int delete = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < productArrayList.size(); i++) {
@@ -70,18 +72,33 @@ public class ProductService implements IService {
                 break;
             }
         }
-        dispaly();
+        //cach 2
+//        return this.productArrayList.remove(product);
+
     }
+
+
 
     @Override
     public void searchByName(String name) {
-        int count =0;
-        for (int i = 0; i < productArrayList.size(); i++) {
-            if (name.equals(productArrayList.get(i).getName())) {
-                System.out.println(" ten can tim la " + productArrayList.get(i));
-                break;
-            }else {
-               count++;
+        //cach 1
+//        int count =0;
+//        for (int i = 0; i < productArrayList.size(); i++) {
+//            if (name.equals(productArrayList.get(i).getName())) {
+//                System.out.println(" ten can tim la " + productArrayList.get(i));
+//                break;
+//            }else {
+//               count++;
+//            }
+//        }if (count>0)
+//            System.out.println(" ten cua ban tim ko co");
+        // cach 2
+        int count = 0;
+        for (Product s : productArrayList) {
+            if (s.getName().indexOf(name) >= 0) {
+                System.out.println(s);
+            } else {
+                count++;
             }
         }if (count>0)
             System.out.println(" ten cua ban tim ko co");
