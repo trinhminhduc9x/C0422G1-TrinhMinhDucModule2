@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class SelectionSort {
+public class InsertionSort {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 //        selectionSort(arrayList());
-        selectionSort2(intToArr());
+//        selectionSort2(intToArr());
+        insertionSort(intToArr());
     }
 
     public static ArrayList arrayList() {
@@ -41,21 +42,36 @@ public class SelectionSort {
         return array;
     }
 
-    public static void selectionSort(ArrayList<Integer> arr) {
-        for (int i = 0; i < arr.size(); i++) {
-            int indexMin = i;
-            for (int j = i; j < arr.size(); j++) {
-                if (arr.get(j) < arr.get(indexMin)) {
-                    indexMin = j;
-                }
+    //    public static void selectionSort(ArrayList<Integer> arr) {
+//        for (int i = 0; i < arr.size(); i++) {
+//            int indexMin = i;
+//            for (int j = i; j < arr.size(); j++) {
+//                if (arr.get(j) < arr.get(indexMin)) {
+//                    indexMin = j;
+//                }
+//            }
+//            System.out.println("Min: " + arr.get(indexMin));
+//            if (indexMin != i) {
+//                int temp = arr.get(i);
+//                arr.set(i, arr.get(indexMin));
+//                arr.set(indexMin, temp);
+//            }
+//            System.out.println(" doi cho lan : " + i + " : " + arr.get(i));
+//        }
+//    }
+    public static void insertionSort(int[] arr) {
+        int x;
+        int pos;
+        for (int i = 0; i < arr.length; i++) {
+            x = arr[i];
+            pos = i;
+            while (0 < pos && x < arr[pos - 1]) {
+                arr[pos] = arr[pos - 1];
+                pos--;
             }
-            System.out.println("Min: " + arr.get(indexMin));
-            if (indexMin != i) {
-                int temp = arr.get(i);
-                arr.set(i, arr.get(indexMin));
-                arr.set(indexMin, temp);
-            }
-            System.out.println(" doi cho lan : " + i + " : " + arr.get(i));
+            arr[pos] = x;
+            System.out.println("lan thu" + i + ":" + Arrays.toString(arr));
+//            System.out.println("lan thu" + i + ":" + arr[i]);
         }
     }
 
