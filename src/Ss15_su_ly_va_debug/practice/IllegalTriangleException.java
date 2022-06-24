@@ -7,7 +7,7 @@ public class IllegalTriangleException {
     private static void calculate() {
 
         Triangle triangle = new Triangle();
-        boolean flag;
+
         do {
         try {
             Scanner scanner = new Scanner(System.in);
@@ -19,17 +19,17 @@ public class IllegalTriangleException {
             int c = scanner.nextInt();
             triangle.check(a,b,c);
             System.out.println("a b c la canh cua tam giac"+a+b+c);
-            flag=true;
+           break;
             }
          catch (InputMismatchException e) {
             System.err.println("nhap so vao thang ngu");
-            flag= false;
+
         } catch (IllegalTriangleExceptionTest e) {
             e.printStackTrace();
-            flag =false;
+
         }
         }
-        while (!flag);
+        while (true);
         }
     public static void main(String[] args) {
         calculate();
