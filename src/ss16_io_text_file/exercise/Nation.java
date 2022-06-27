@@ -38,7 +38,7 @@ public class Nation {
         this.name = name;
     }
     public String gettoCvs() {
-        return getId()+getCode()+getName();
+        return getId()+","+getCode()+","+getName();
     }
 
     @Override

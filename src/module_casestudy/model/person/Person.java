@@ -3,6 +3,7 @@ package module_casestudy.model.person;
 public abstract class Person {
     private String id;
     private String name;
+    private String dateOfbirth;
     private boolean gender;
     private int idNumber;
     private int phoneNumber;
@@ -11,9 +12,10 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(String id, String name, boolean gender, int idNumber, int phoneNumber, String email) {
+    public Person(String id, String name, String dateOfbirth, boolean gender, int idNumber, int phoneNumber, String email) {
         this.id = id;
         this.name = name;
+        this.dateOfbirth = dateOfbirth;
         this.gender = gender;
         this.idNumber = idNumber;
         this.phoneNumber = phoneNumber;
@@ -34,6 +36,14 @@ public abstract class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDateOfbirth() {
+        return dateOfbirth;
+    }
+
+    public void setDateOfbirth(String dateOfbirth) {
+        this.dateOfbirth = dateOfbirth;
     }
 
     public boolean isGender() {
@@ -70,14 +80,13 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "id='" + id + '\'' +
+        return "id='" + id + '\'' +
                 ", name='" + name + '\'' +
+                ", dateOfbirth='" + dateOfbirth + '\'' +
                 ", gender=" + gender +
-                // toan tu 3 ngoi xac dinh gioi tinh
                 ", idNumber=" + idNumber +
                 ", phoneNumber=" + phoneNumber +
-                ", email='" + email + '\'' +
-                '}';
+                ", email='" + email + '\''
+               ;
     }
 }

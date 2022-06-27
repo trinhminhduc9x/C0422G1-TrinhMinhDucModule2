@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Csv {
+public class ReadCsv {
     public static List<Nation> readStudentFileCSV(String pathFile) {
         List<Nation> nationList = new ArrayList<Nation>();
         File file = new File(pathFile);
@@ -33,7 +33,7 @@ public class Csv {
         List<Nation> nationList = readStudentFileCSV("src/ss16_io_text_file/exercise/test.csv");
       //  List<Integer> numbers = readFile(path);
         for (int i = 0; i <nationList.size(); i++) {
-            System.out.println(nationList.get(i));
+            System.out.println(nationList.get(i).getName());
         }
     }
 }

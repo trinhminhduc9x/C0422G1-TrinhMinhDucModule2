@@ -74,4 +74,8 @@ public class Truck extends Car {
                 super.toString() +
                 '}';
     }
+    //public Truck(String bienKiemSoat, String temHangSanXuat, String namSanXuat, String chuSoHuu, double trongTai)
+    public  String getToCSV(){
+        return getBienKiemSoat()+","+getTemHangSanXuat()+","+getNamSanXuat()+","+getChuSoHuu()+","+ getTrongTai();
+    }
 }
