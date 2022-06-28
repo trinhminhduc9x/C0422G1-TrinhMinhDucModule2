@@ -7,7 +7,7 @@ import baiTapThem.service.IServiceCar;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MotorbikeService implements IServiceCar {
+public  class MotorbikeService implements IServiceCar {
 
     Scanner scanner = new Scanner(System.in);
     private static final ArrayList<Motorbike> motorbikeArrayList = new ArrayList<Motorbike>();
@@ -45,28 +45,28 @@ public class MotorbikeService implements IServiceCar {
     }
 
     @Override
-    public void delete(String name) {
-        for (int i = 0; i < motorbikeArrayList.size(); i++) {
-            if (name.equals(motorbikeArrayList.get(i).getBienKiemSoat())) {
-                System.out.println("Chức năng của hệ thống " +
-                        "\n 1.yes" +
-                        "\n 2.No");
-                Scanner scanner = new Scanner(System.in);
-                System.out.println("Chọn chức năng");
-                int choose = Integer.parseInt(scanner.nextLine());
-                switch (choose) {
-                    case 1:
-                        System.out.println("chức năng them moi");
-                        motorbikeArrayList.remove(i);
-                        System.out.println("da xoa thanh cong");
-                        break;
-                    case 2:
-                        System.out.println("Chức năng hien thi");
-                        break;
-                }
-                break;
-            }
-        }
+    public void delete(String a) {
+//        for (int i = 0; i < motorbikeArrayList.size(); i++) {
+//            if (name.equals(motorbikeArrayList.get(i).getBienKiemSoat())) {
+//                System.out.println("Chức năng của hệ thống " +
+//                        "\n 1.yes" +
+//                        "\n 2.No");
+//                Scanner scanner = new Scanner(System.in);
+//                System.out.println("Chọn chức năng");
+//                int choose = Integer.parseInt(scanner.nextLine());
+//                switch (choose) {
+//                    case 1:
+//                        System.out.println("chức năng them moi");
+//                        motorbikeArrayList.remove(i);
+//                        System.out.println("da xoa thanh cong");
+//                        break;
+//                    case 2:
+//                        System.out.println("Chức năng hien thi");
+//                        break;
+//                }
+//                break;
+//            }
+//        }
 
     }
 

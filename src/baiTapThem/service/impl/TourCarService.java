@@ -52,9 +52,10 @@ public class TourCarService implements IServiceCar {
 
 
     @Override
-    public void delete(String name) {
+    public void delete(String bienSo) {
+        dispaly();
         for (int i = 0; i < tourCarsList.size(); i++) {
-            if (name.equals(tourCarsList.get(i).getBienKiemSoat())) {
+            if (bienSo.equals(tourCarsList.get(i).getBienKiemSoat())) {
                 System.out.println("Chức năng của hệ thống " +
                         "\n 1.yes" +
                         "\n 2.No");
@@ -63,9 +64,8 @@ public class TourCarService implements IServiceCar {
                 int choose = Integer.parseInt(scanner.nextLine());
                 switch (choose) {
                     case 1:
-                        System.out.println("chức năng them moi");
+                        System.out.println("da xoa thanh cong " + tourCarsList.get(i));
                         tourCarsList.remove(i);
-                        System.out.println("da xoa thanh cong");
                         break;
                     case 2:
                         System.out.println("Chức năng hien thi");

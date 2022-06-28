@@ -11,7 +11,7 @@ public class MainCar {
     private static MotorbikeService iMotorbikeService = new MotorbikeService();
     private static TourCarService iTourCarService = new TourCarService();
     private static TruckService iTruckService = new TruckService();
-
+    Scanner scanner = new Scanner(System.in);
     public static void displayMainMenu() {
         boolean flag = true;
         do {
@@ -111,14 +111,12 @@ public class MainCar {
             }
         } while (flag);
     }
-
     private static void deleteMainMenuCar() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("nhap vao bien kiem xoat ");
-        String bienKiemXoat = scanner.nextLine();
-        iTourCarService.delete(bienKiemXoat);
-        iTruckService.delete(bienKiemXoat);
-        iMotorbikeService.delete(bienKiemXoat);
+        Scanner scanner = new Scanner(System.in);
+        String bienSo =  scanner.nextLine();
+        iTruckService.delete(bienSo);
+//        iTourCarService.delete(bienSo);
     }
     private static void searchMainMenuCar() {
         Scanner scanner = new Scanner(System.in);

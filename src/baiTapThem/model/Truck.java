@@ -70,8 +70,8 @@ public class Truck extends Car {
     @Override
     public String toString() {
         return "Truck{" +
-                "trongTai=" + trongTai +
                 super.toString() +
+                "trongTai=" + trongTai +
                 '}';
     }
     //public Truck(String bienKiemSoat, String temHangSanXuat, String namSanXuat, String chuSoHuu, double trongTai)

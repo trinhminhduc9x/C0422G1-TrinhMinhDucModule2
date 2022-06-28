@@ -1,15 +1,15 @@
-package baiTapThem.view;
+package baiTapThem.utill;
 import baiTapThem.model.Truck;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 public class ReadAndWriteCSV {
-    public static void writeListToCSV(List<Truck> truckList, String pathFile) {
+    public static void writeListToCSV(List<Truck> truckList, String pathFile, boolean append) {
         File file = new File(pathFile);
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
-            fileWriter = new FileWriter(file, true);
+            fileWriter = new FileWriter(file, append);
             bufferedWriter = new BufferedWriter(fileWriter);
             for( Truck s : truckList) {
                 bufferedWriter.write(s.getToCSV());
@@ -21,7 +21,7 @@ public class ReadAndWriteCSV {
         }
     }
 
-    public static List<Truck> employeeList(String pathFile) {
+    public static List<Truck> readTruckList(String pathFile) {
         List<Truck> truckList = new ArrayList<>();
         File file = new File(pathFile);
         FileReader fileReader = null;
