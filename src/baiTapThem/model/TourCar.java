@@ -86,4 +86,7 @@ public class TourCar extends Car {
                 ", kieuXe='" + kieuXe + '\'' +
                 '}';
     }
+    public  String getToCSV(){
+        return getBienKiemSoat()+","+getTemHangSanXuat()+","+getNamSanXuat()+","+getChuSoHuu()+","+ getSoChoNgoi()+","+ getKieuXe();
+    }
 }

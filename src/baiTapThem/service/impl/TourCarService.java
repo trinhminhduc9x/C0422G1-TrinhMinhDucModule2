@@ -1,29 +1,23 @@
 package baiTapThem.service.impl;
 
 
-import baiTapThem.controller.MainCar;
 import baiTapThem.model.TourCar;
 import baiTapThem.service.IServiceCar;
+import baiTapThem.utill.ReadAndWriteCSV;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class TourCarService implements IServiceCar {
 
     Scanner scanner = new Scanner(System.in);
-    private static final ArrayList<TourCar> tourCarsList = new ArrayList<TourCar>();
-
-    static {
-        tourCarsList.add(new TourCar("1", "asd", "Asd", "asd", 123, "kieu xe"));
-        tourCarsList.add(new TourCar("2", "asd", "Asd", "asd", 123, "kieu xe"));
-        tourCarsList.add(new TourCar("3", "asd", "Asd", "asd", 123, "kieu xe"));
-        tourCarsList.add(new TourCar("4", "asd", "Asd", "asd", 123, "kieu xe"));
-
-    }
+    private static final String PATH_FILE = "src/baiTapThem/data/TourCarService.csv";
 
     @Override
     public void add() {
-
+        List<TourCar> tourCarList = new ArrayList<>();
+        List<TourCar> tourCarList2 = ReadAndWriteCSV.readTourCarList(PATH_FILE);
         System.out.println("nhập bien kiem soat");
         String bienKiemSoat = scanner.nextLine();
         System.out.println("nhập ten hang san xuat");
@@ -33,60 +27,63 @@ public class TourCarService implements IServiceCar {
         System.out.println(" nhap chu so huu");
         String chuSoHuu = scanner.nextLine();
         System.out.println("nhập so cho ngoi ");
-        int id = Integer.parseInt(scanner.nextLine());
+        int id = tourCarList2.size() + 1 ;
         System.out.println(" nhap kieu xe");
         String kieuXe = scanner.nextLine();
-
         TourCar tourCar = new TourCar(bienKiemSoat, temHangSanXuat, namSanXuat, chuSoHuu, id, kieuXe);
         // them mới dùng add()
-        tourCarsList.add(tourCar);
+        tourCarList.add(tourCar);
+        ReadAndWriteCSV.writeTourCarListToCSV(tourCarList, PATH_FILE, true);
     }
 
     @Override
     public void dispaly() {
-        for (Object s : tourCarsList) {
-            System.out.println(s);
+        List<TourCar> tourCarList = ReadAndWriteCSV.readTourCarList(PATH_FILE);
+        for (int i = 0; i < tourCarList.size(); i++) {
+            System.out.println((1 + i) + ". " + tourCarList.get(i));
         }
     }
 
-
-
     @Override
     public void delete(String bienSo) {
-        dispaly();
-        for (int i = 0; i < tourCarsList.size(); i++) {
-            if (bienSo.equals(tourCarsList.get(i).getBienKiemSoat())) {
-                System.out.println("Chức năng của hệ thống " +
+        List<TourCar> tourCarList = ReadAndWriteCSV.readTourCarList(PATH_FILE);
+        for (int i = 0; i < tourCarList.size(); i++) {
+            if (bienSo.equals(tourCarList.get(i).getBienKiemSoat())) {
+                System.out.println("bạn có chắc chắn xóa không " +
                         "\n 1.yes" +
                         "\n 2.No");
-                Scanner scanner = new Scanner(System.in);
-                System.out.println("Chọn chức năng");
-                int choose = Integer.parseInt(scanner.nextLine());
-                switch (choose) {
-                    case 1:
-                        System.out.println("da xoa thanh cong " + tourCarsList.get(i));
-                        tourCarsList.remove(i);
-                        break;
-                    case 2:
-                        System.out.println("Chức năng hien thi");
-                        break;
+                try {
+                    int choose = Integer.parseInt(scanner.nextLine());
+                    switch (choose) {
+                        case 1:
+                            System.out.println("da xoa thanh cong " + tourCarList.get(i));
+                            tourCarList.remove(i);
+                            ReadAndWriteCSV.writeTourCarListToCSV(tourCarList, PATH_FILE, false);
+                            break;
+                        case 2:
+                            System.out.println("không xóa thoát ra ngoài");
+                            break;
+                    }
+                    break;
+                } catch (Exception e) {
+                    System.out.println(" bạn nhập bị lỗi, yêu cầu nhập đúng cú pháp ");
                 }
-                break;
             }
         }
     }
 
     @Override
     public void searchByName(String name) {
-        int count =0;
-        for (int i = 0; i < tourCarsList.size(); i++) {
-            if (name.equals(tourCarsList.get(i).getBienKiemSoat())) {
-                System.out.println(tourCarsList.get(i));
+        List<TourCar> tourCarList = ReadAndWriteCSV.readTourCarList(PATH_FILE);
+        int count = 0;
+        for (int i = 0; i < tourCarList.size(); i++) {
+            if (name.equals(tourCarList.get(i).getBienKiemSoat())) {
+                System.out.println(tourCarList.get(i));
                 count++;
                 break;
             }
-            }
-        if (count==0){
+        }
+        if (count == 0) {
             System.out.println(" ko co phuong tien duoc tim thay");
         }
     }

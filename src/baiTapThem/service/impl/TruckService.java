@@ -45,7 +45,7 @@ public class TruckService implements IServiceCar {
         // them mới dùng add()
         List<Truck> trucksList = new ArrayList<Truck>();
         trucksList.add(truck);
-        ReadAndWriteCSV.writeListToCSV(trucksList, PATH_FILE, true);
+        ReadAndWriteCSV.writeTruckListToCSV(trucksList, PATH_FILE, true);
     }
 
     @Override
@@ -77,30 +77,28 @@ public class TruckService implements IServiceCar {
     @Override
     public void delete(String bienSo) {
         List<Truck> trucksList = ReadAndWriteCSV.readTruckList(PATH_FILE);
-//        if (bienSo.contains("C")) {
-            for (int i = 0;  i < trucksList.size(); i++) {
-                if (bienSo.equals(trucksList.get(i).getBienKiemSoat())) {
-                    System.out.println("bạn có chắc chắn xóa không " +
-                            "\n 1.yes" +
-                            "\n 2.No");
-                    try {
-                        int choose = Integer.parseInt(scanner.nextLine());
-                        switch (choose) {
-                            case 1:
-                                System.out.println("da xoa thanh cong " + trucksList.get(i));
-                                trucksList.remove(i);
-                                ReadAndWriteCSV.writeListToCSV(trucksList, PATH_FILE, false);
-                                break;
-                            case 2:
-                                System.out.println("không xóa thoát ra ngoài");
-                                break;
-                        }
-                        break;
-                    } catch (Exception e) {
-                        System.out.println(" bạn nhập bị lỗi, yêu cầu nhập đúng cú pháp ");
+        for (int i = 0; i < trucksList.size(); i++) {
+            if (bienSo.equals(trucksList.get(i).getBienKiemSoat())) {
+                System.out.println("bạn có chắc chắn xóa không " +
+                        "\n 1.yes" +
+                        "\n 2.No");
+                try {
+                    int choose = Integer.parseInt(scanner.nextLine());
+                    switch (choose) {
+                        case 1:
+                            System.out.println("da xoa thanh cong " + trucksList.get(i));
+                            trucksList.remove(i);
+                            ReadAndWriteCSV.writeTruckListToCSV(trucksList, PATH_FILE, false);
+                            break;
+                        case 2:
+                            System.out.println("không xóa thoát ra ngoài");
+                            break;
                     }
+                    break;
+                } catch (Exception e) {
+                    System.out.println(" bạn nhập bị lỗi, yêu cầu nhập đúng cú pháp ");
                 }
             }
         }
     }
-//}
+}
