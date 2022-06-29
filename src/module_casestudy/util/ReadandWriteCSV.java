@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadandWriteCSV {
+public class eadandWriteCSV {
     public static void writeListToCSV(List<Employee> employeeList, String pathFile, boolean append) {
         File file = new File(pathFile);
         FileWriter fileWriter = null;
@@ -44,5 +44,8 @@ public class ReadandWriteCSV {
         } catch (IOException e) {
         }
         return employeeList;
+    }
+
+    private static class Employee {
     }
 }
